@@ -9,6 +9,9 @@
 	<script src="js/trees.js"></script>
 	<style>
 		@import url(//fonts.googleapis.com/css?family=Lato:700);
+		input[type="range"] {
+			-webkit-transform: rotate(-90deg);
+		}
 	</style>
 </head>
 <body>
