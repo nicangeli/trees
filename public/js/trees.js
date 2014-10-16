@@ -19,9 +19,16 @@ app.controller('PriceController', ['$scope', function($scope) {
 	};
 
 	var images = {
-		'3': 'img/small.png',
-		'5': 'img/medium.png',
-		'7': 'img/large.png'
+		'standard' : {
+			'3': 'img/small.png',
+			'5': 'img/medium.png',
+			'7': 'img/large.png'
+		},
+		'lights' : {
+			'3': 'img/small_lights.png',
+			'5': 'img/medium_lights.png',
+			'7': 'img/large_lights.png'
+		}
 	};
 
 
@@ -37,7 +44,12 @@ app.controller('PriceController', ['$scope', function($scope) {
 	};
 
 	$scope.treeimage = function() {
-		return images[$scope.size];
+		if($scope.lights) {
+			return images.lights[$scope.size];
+		} else {
+			return images.standard[$scope.size];
+		}
+		
 	};
 
 }])
