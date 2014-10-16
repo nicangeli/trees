@@ -1,4 +1,7 @@
-var app = angular.module('trees', []);
+var app = angular.module('trees', [], function($interpolateProvider) {
+    $interpolateProvider.startSymbol('<%');
+    $interpolateProvider.endSymbol('%>');
+});
 
 app.controller('PriceController', ['$scope', function($scope) {
 	$scope.size = 5;
@@ -15,6 +18,12 @@ app.controller('PriceController', ['$scope', function($scope) {
 		'stand': 10.00
 	};
 
+	var images = {
+		'3': 'img/small.png',
+		'5': 'img/medium.png',
+		'7': 'img/large.png'
+	};
+
 
 	$scope.subtotal = function() {
 		var price = prices.tree[$scope.size];
@@ -25,6 +34,10 @@ app.controller('PriceController', ['$scope', function($scope) {
 			price += prices['stand'];
 		}
 		return price;
-	}
+	};
+
+	$scope.treeimage = function() {
+		return images[$scope.size];
+	};
 
 }])
