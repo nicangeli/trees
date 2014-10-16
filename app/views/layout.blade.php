@@ -26,6 +26,14 @@
 	        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	    <![endif]-->
+	    <style>
+	    	input[type="range"] {
+	    		-webkit-appearance: slider-vertical;
+	    		--moz-appearance: slider-vertical;
+	    		appearance: slider-vertical;
+	    		height: 600px;
+	    	}
+	    </style>
 	</head>
 
 	<body>
